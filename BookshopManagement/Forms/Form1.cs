@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BookShopManagement.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -30,6 +31,14 @@ namespace BookShopManagement
         private void btnTurnOff_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            using (Dashboard fd = new Dashboard())
+            {
+                fd.ShowDialog();
+            }
         }
     }
 }

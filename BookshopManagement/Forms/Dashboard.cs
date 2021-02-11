@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BookShopManagement.UserControls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,6 +21,8 @@ namespace BookShopManagement.Forms
             timerTime.Start();
             PanelWidth = panelLeft.Width;
             isCollapsed = false;
+            UC_Home ucHome = new UC_Home();
+            AddControlsToPanel(ucHome);
         }
 
         private void button9_Click(object sender, EventArgs e)
@@ -65,9 +68,19 @@ namespace BookShopManagement.Forms
             panelSide.Height = btn.Height;
         }
 
+
+        private void AddControlsToPanel(Control c)
+        {
+            c.Dock = DockStyle.Fill;
+            panelControls.Controls.Clear();
+            panelControls.Controls.Add(c);
+        }
+
         private void btnHome_Click(object sender, EventArgs e)
         {
             moveSidePanel(btnHome);
+            UC_Home ucHome = new UC_Home();
+            AddControlsToPanel(ucHome);
         }
 
         private void btnSalesBooks_Click(object sender, EventArgs e)
